@@ -15,9 +15,10 @@
 - Class: text
   Output: |
     In this lesson, you will learn how to read in LiDAR data
-    and how to generate a canopy height model in an urban 
-    environment. You will also get to try out some basic 
-    forest structural functions.
+    and how to generate a digital surface model (DSM), digital
+    elevation model (DEM), and canopy height model (CHM). You 
+    will also learn building classification and removal
+    for urban forestry applications. 
 
 - Class: cmd_question
   Output: |
