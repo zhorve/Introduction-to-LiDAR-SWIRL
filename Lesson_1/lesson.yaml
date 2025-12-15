@@ -1,0 +1,109 @@
+- Class: meta
+  Course: LiDAR for Forest Ecology
+  Lesson: Introduction to LiDAR
+  Author: Zack Horve
+  Type: Standard
+  Organization: Purdue University
+  Version: 2.4.5
+
+- Class: text
+  Output: |
+    Welcome to LiDAR for Forest Ecology! In this course, you
+    will learn the fundamentals required to start using LiDAR
+    for forest ecology applications.
+
+- Class: text
+  Output: |
+    In this lesson, you will learn how to read in LiDAR data
+    and how to generate a canopy height model in an urban 
+    environment. You will also get to try out some basic 
+    forest structural functions.
+
+- Class: cmd_question
+  Output: |
+    First, load the `lidR` package by typing:
+    library(lidR)
+  CorrectAnswer: library(lidR)
+  AnswerTests: omnitest(correctExpr="library(lidR)")
+  Hint: Just type library(lidR)
+
+- Class: cmd_question
+  Output: |
+    Now load the `raster` package by typing:
+    library(raster)
+  CorrectAnswer: library(raster)
+  AnswerTests: omnitest(correctExpr="library(raster)")
+  Hint: Just type library(raster)
+
+- Class: text
+  Output: |
+    LiDAR data is often provided in the form of a point cloud. Point clouds can be
+    saved in a variety of formats, but the most common is .las. Let's try loading 
+    a point cloud and looking through the basic properties. 
+    
+- Class: cmd_question
+  Output: | 
+    To load the point cloud, please enter the following into the terminal: 
+    las= readLAS("E:/Purdue/FNR_590_classwork/Lesson_Plan_Materials/dsil_m1_3DEP.las")
+  CorrectAnswer: las= readLAS("E:/Purdue/FNR_590_classwork/Lesson_Plan_Materials/dsil_m1_3DEP.las")
+  AnswerTests: omnitest(correctExpr='las= readLAS("E:/Purdue/FNR_590_classwork/Lesson_Plan_Materials/dsil_m1_3DEP.las")')
+  Hint: |
+    Just copy and paste the following into the terminal: 
+    las= readLAS("E:/Purdue/FNR_590_classwork/Lesson_Plan_Materials/dsil_m1_3DEP.las")
+
+- Class: cmd_question
+  Output: |
+    Our point cloud is now loaded into our R environment as an object called las. 
+    Let's take a look at it by typing the following into your terminal(this will
+    open a new window): plot(las)
+  CorrectAnswer: plot(las)
+  AnswerTests: omnitest(correctExpr='plot(las)')
+  Hint: |
+    Just copy and paste the following into the terminal: plot(las)
+
+- Class: text
+  Output: | 
+    This point cloud contains 3-D structural information for a urban forest in 
+    Davenport, Iowa. You can see houses, trees, and two streams in the point cloud.
+    Try rotating the point cloud by left clicking and dragging. You can also move
+    the point cloud by right clicking and dragging.
+
+- Class: text
+  Output: |
+    Try zooming in on the point cloud using the wheel on your mouse. You can see
+    that the point cloud is made up of individual points in 3-D. Each of these points
+    represents where a laser beam reflected off an object back to the airplane that 
+    collected this data. 
+    
+- Class: cmd_question
+  Output: |
+    Let's learn more about this point cloud by viewing the summary. Please copy
+    and paste the following into your terminal: summary(las)
+  CorrectAnswer: summary(las)
+  AnswerTests: omnitest(correctExpr='summary(las)')
+  Hint: |
+    Just copy and paste the following into your terminal: summary(las)
+
+- Class: text
+  Output: |
+    The summary() function provides a lot of information, and it can be overwhelming. 
+    Let's focus on a couple key pieces of information.
+
+- Class: mult_question
+  Output: |
+    One critical piece of information is the point density of the point cloud. Point
+    density refers to the number of points per unit of area. Higher point density 
+    allows for better distinction of features such as houses or tree structure. 
+    However, with higher point density, the size of .las files increase, making 
+    calculations more computationally expensive. Checking the point density of your
+    point cloud should be one of the first things you do when exploring your data.
+
+    What is the point density of the point cloud we loaded in? Do not include units
+    in your answer.
+  AnswerChoices: 13.47;10.53;8.12
+  CorrectAnswer: 13.47
+  AnswerTests: omnitest(correctVal='13.47')
+  Hint: |
+    Read the units carefully! We are looking for the density of POINTS / m^2
+
+
