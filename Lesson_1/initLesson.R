@@ -31,4 +31,14 @@ setwd(get_swirl_course_path(course_name))
 # Confirm
 cat("Working directory set to:\n", getwd(), "\n")
 
- 
+# The lesson requires the raster and lidR packages. This checks and installs
+# the packages in cass the learner does not have them. Note-- it does not 
+# load the packages. 
+
+pkgs <- c("raster", "lidR")
+
+missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+
+if (length(missing) > 0) {
+  install.packages(missing)
+}
