@@ -111,14 +111,6 @@
   Output: |
    Now we have inspected the point cloud, let's start processing!
 
-- Class: text
-  Output: |
-   The first product we will create is a digital surface model or DEM. A digital
-   surface model represents the highest vertical point value for each raster cell.
-   If you imagine a cloth descending from above onto the forest, the cloth would 
-   follow the contours of the canopy where there are trees, but fall to the ground 
-   where there are canopy gaps. 
-
 - Class: figure
   Output: |
    The first product we will create is a digital surface model or DEM. A digital
@@ -133,17 +125,17 @@
   Output: |
    Let's try making a DSM from our point cloud. Enter the following into your terminal:
    dsm= rasterize_canopy(las, res= 1, algorithm = p2r())
-  CorrectAnswer: dsm= rasterize_canopy(las, res= 1, algorithm = p2r())
-  AnswerTests: omnitest(correctExpr='dsm= rasterize_canopy(las, res= 1, algorithm = p2r())')
+  CorrectAnswer: dsm = rasterize_canopy(las, res= 1, algorithm = p2r())
+  AnswerTests: omnitest(correctExpr='dsm = rasterize_canopy(las, res= 1, algorithm = p2r())')
   Hint: |
-   Simply type dsm= rasterize_canopy(las, res= 1, algorithm = p2r()) into your terminal.
+   Simply type dsm = rasterize_canopy(las, res= 1, algorithm = p2r()) into your terminal.
 
 - Class: cmd_question
   Output: |
    Great work! Now let's view it. Enter the following into your terminal: 
    plot(dsm, col= col, main = "Digital Surface Model (1 m)")
-  CorrectAnswer: plot(dsm, col= col, main = "Digital Surface Model (1 m)")
-  AnswerTests: omnitest(correctExpr='plot(dsm, col= col, main = "Digital Surface Model (1 m)")')
+  CorrectAnswer: plot(dsm, col = col, main = "Digital Surface Model (1 m)")
+  AnswerTests: omnitest(correctExpr='plot(dsm, col = col, main = "Digital Surface Model (1 m)")')
   Hint: |
-   Simply type plot(dsm, col= col, main = "Digital Surface Model (1 m)") into your terminal.
+   Simply type plot(dsm, col = col, main = "Digital Surface Model (1 m)") into your terminal.
 
