@@ -45,7 +45,9 @@
 - Class: cmd_question
   Output: | 
     To load the point cloud, please enter the following into the terminal: 
+    
     las= readLAS("Data/lesson_1_davenport_pc.las")
+    
   CorrectAnswer: las= readLAS("Data/lesson_1_davenport_pc.las")
   AnswerTests: omnitest(correctExpr='las= readLAS("Data/lesson_1_davenport_pc.las")')
   Hint: |
@@ -56,7 +58,10 @@
   Output: |
     Our point cloud is now loaded into our R environment as an object called las. 
     Let's take a look at it by typing the following into your terminal(this will
-    open a new window): plot(las)
+    open a new window): 
+    
+    plot(las)
+    
   CorrectAnswer: plot(las)
   AnswerTests: omnitest(correctExpr='plot(las)')
   Hint: |

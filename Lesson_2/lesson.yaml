@@ -1,0 +1,53 @@
+- Class: meta
+  Course: LiDAR for Forest Ecology
+  Lesson: Lesson_2
+  Author: Zack Horve
+  Type: Standard
+  Organization: Purdue University
+  Version: 2.4.5
+
+- Class: text
+  Output: |
+    Welcome to Lesson 2 of LiDAR for Forest Ecology! In this lesson, you
+    will learn how identify and segment individual trees from an airborne LiDAR
+    point cloud to extract tree heights and landscape metrics. You will also 
+    have an opportunity to explore the process and challenges of validating
+    remote sensing datasets with field collected data. 
+    
+- Class: figure
+  Output: |
+    For these exercises, we use a dataset from the Abby Road National Ecological 
+    Observatory Network (NEON) site in Washington State. As a NEON site, Abby Road 
+    is regularly surveyed by airborne remote sensing missions, including LiDAR. 
+    In addition, permanent vegetation inventory plots have been established at 
+    the site, where ground-based measurements are routinely collected.
+  Figure: draw_ABBY_map.R
+  FigureType: new
+  
+- Class: cmd_question
+  Output: |
+    Our area of interest will be the area surrounding one of the vegetation inventory
+    plots within the Abby Road NEON site. To start, let's load the point cloud. Please
+    type the following into your terminal: 
+    
+    las = readLAS("ABBY_013_pc_2021.las")
+    
+  CorrectAnswer: las = readLAS("ABBY_013_pc_2021.las")
+  AnswerTests: omnitest(correctExpr='las = readLAS("ABBY_013_pc_2021.las")')
+  Hint: |
+   Simply type las = readLAS("ABBY_013_pc_2021.las") into your terminal.
+
+- Class: cmd_question
+  Output: |
+    Our point cloud is now loaded into our R environment as an object called las. 
+    Let's take a look at it by typing the following into your terminal(this will
+    open a new window): 
+    
+    plot(las, color = "Classification")
+    
+  CorrectAnswer: plot(las, color = "Classification")
+  AnswerTests: omnitest(correctExpr='plot(las, color = "Classification")')
+  Hint: |
+    Just copy and paste the following into the terminal: 
+    
+    plot(las, color = "Classification")
